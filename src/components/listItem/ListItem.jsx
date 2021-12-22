@@ -7,7 +7,7 @@ import { colors } from "../../theme/colors";
 const StyledListItem = styled.div`
   display: flex;
   flex-direction: row;
-  height: 8rem;
+  min-height: 8rem;
   padding: 0.3125rem;
   background-color: ${colors.darkBlue};
   color: ${colors.grayWhite};
@@ -15,7 +15,7 @@ const StyledListItem = styled.div`
   .avatar {
     height: 100%;
     flex: 1;
-    margin-right: 2em;
+    margin-right: 1em;
 
     img {
       max-height: 100%;
