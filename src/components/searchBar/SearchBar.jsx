@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { colors } from "../../theme/colors";
 
 const StyledSearchBar = styled.div`
-  padding: 0.2rem 0.3125rem;
   display: flex;
   justify-content: space-between;
 
@@ -31,10 +30,10 @@ const StyledSearchBar = styled.div`
     border: 1px solid ${colors.black};
   }
 `;
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, className }) => {
   const [searchValue, setSearchValue] = useState("");
   return (
-    <StyledSearchBar>
+    <StyledSearchBar className={className}>
       <input
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}

@@ -7,6 +7,8 @@ import styled from "styled-components";
 import { getGnomePopulation } from "../../api/gnomePopulation";
 import ListItem from "../../components/listItem/ListItem";
 import Filters from "../../components/filters/Filters";
+import { colors } from "../../theme/colors";
+import { MenuItem, Select } from "@mui/material";
 
 const StyledLanding = styled.div`
   .loading-container {
@@ -14,9 +16,29 @@ const StyledLanding = styled.div`
     justify-content: center;
     margin-top: 1rem;
   }
+
+  header {
+    padding: 0.2rem 0.3125rem;
+    display: flex;
+
+    .city-select {
+      margin-right: 0.5rem;
+      color: ${colors.white};
+      background-color: ${colors.paleBLue};
+      outline: none;
+      border: 1px solid ${colors.black};
+      border-radius: 0.2em;
+    }
+
+    .search-bar {
+      flex: 1;
+    }
+  }
 `;
 
 const Landing = () => {
+  const [selectedCityName, setSelectedCityName] = useState("");
+  const [selectedCityItems, setSelectedCityItems] = useState([]);
   const [listItems, setListItems] = useState([]);
   const [pagination, setPagination] = useState(10);
 
@@ -31,7 +53,7 @@ const Landing = () => {
 
   const { isLoading, error, data } = useQuery("gnomesData", getGnomePopulation);
 
-  const originalListItems = data?.Brastlewark || [];
+  const dataKeys = (!error && data && Object.keys(data)) || [];
 
   const handleFilterChange = (values, filter) => {
     currentFilters.current[filter] = values;
@@ -60,7 +82,7 @@ const Landing = () => {
       heightFilter,
       weightFilter,
     } = currentFilters.current;
-    let itemsAppliedFilters = originalListItems;
+    let itemsAppliedFilters = selectedCityItems;
 
     //Search filter
     if (!!search) {
@@ -110,6 +132,13 @@ const Landing = () => {
     }
   };
 
+  const handleCitySelect = (value) => {
+    const newCity = data[value];
+    setSelectedCityItems(newCity);
+    setListItems(newCity);
+    setSelectedCityName(value);
+  };
+
   const filtersData = useMemo(() => {
     const professions = new Set();
     const hairColors = new Set();
@@ -117,7 +146,7 @@ const Landing = () => {
     let heightRange = [Infinity, 0];
     let weightRange = [Infinity, 0];
 
-    originalListItems.forEach((item) => {
+    selectedCityItems.forEach((item) => {
       hairColors.add(item.hair_color);
       item.professions.forEach(professions.add, professions);
 
@@ -137,11 +166,16 @@ const Landing = () => {
       heightRange,
       weightRange,
     };
-  }, [originalListItems]);
+  }, [selectedCityItems]);
 
   useEffect(() => {
-    !error && data && setListItems(originalListItems);
-  }, [data, error, originalListItems]);
+    if (!error && data && dataKeys.length > 0) {
+      const firstCity = data[dataKeys[0]];
+      setSelectedCityItems(firstCity);
+      setListItems(firstCity);
+      setSelectedCityName(dataKeys[0]);
+    }
+  }, [data, error]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, {
@@ -155,7 +189,29 @@ const Landing = () => {
 
   return (
     <StyledLanding>
-      <SearchBar onSearch={(val) => handleFilterChange(val, "search")} />
+      <header>
+        <Select
+          name="city"
+          id="city"
+          className="city-select"
+          value={selectedCityName}
+          onChange={(e) => {
+            handleCitySelect(e.target.value);
+          }}
+        >
+          {!error &&
+            data &&
+            dataKeys.map((key) => (
+              <MenuItem key={key} value={key}>
+                {key}
+              </MenuItem>
+            ))}
+        </Select>
+        <SearchBar
+          onSearch={(val) => handleFilterChange(val, "search")}
+          className="search-bar"
+        />
+      </header>
       {isLoading && (
         <div className="loading-container">
           <CircularProgress />
