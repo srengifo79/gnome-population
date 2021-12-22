@@ -58,6 +58,7 @@ const Filters = ({
   hairColors,
   ageRange,
   heightRange,
+  weightRange,
   onFilter,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -65,6 +66,7 @@ const Filters = ({
   const [hairColorsFilter, setHairColorsFilter] = useState([]);
   const [ageFilter, setAgeFilter] = useState(ageRange);
   const [heightFilter, setHeightFilter] = useState(heightRange);
+  const [weightFilter, setWeightFilter] = useState(weightRange);
 
   const checkboxChange = (newFilter, filterList) => {
     let filteredItems = filterList;
@@ -125,6 +127,18 @@ const Filters = ({
                 valueLabelDisplay="auto"
                 min={heightRange[0]}
                 max={heightRange[1]}
+              />
+            </div>
+            <span>Weight</span>
+            <div className="slider-container">
+              <Slider
+                value={weightFilter}
+                onChange={(e, val) =>
+                  rangeFilterChange(val, setWeightFilter, "weightFilter")
+                }
+                valueLabelDisplay="auto"
+                min={weightRange[0]}
+                max={weightRange[1]}
               />
             </div>
           </div>

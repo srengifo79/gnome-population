@@ -26,6 +26,7 @@ const Landing = () => {
     hairColors: [],
     ageFilter: [0, 0],
     heightFilter: [0, 0],
+    weightFilter: [0, 0],
   });
 
   const { isLoading, error, data } = useQuery("gnomesData", getGnomePopulation);
@@ -51,8 +52,14 @@ const Landing = () => {
   };
 
   const applyFilters = () => {
-    const { search, professions, hairColors, ageFilter, heightFilter } =
-      currentFilters.current;
+    const {
+      search,
+      professions,
+      hairColors,
+      ageFilter,
+      heightFilter,
+      weightFilter,
+    } = currentFilters.current;
     let itemsAppliedFilters = originalListItems;
 
     //Search filter
@@ -86,6 +93,11 @@ const Landing = () => {
       (item) => item.height >= heightFilter[0] && item.height <= heightFilter[1]
     );
 
+    //Weight filter
+    itemsAppliedFilters = itemsAppliedFilters.filter(
+      (item) => item.weight >= weightFilter[0] && item.weight <= weightFilter[1]
+    );
+
     setListItems(itemsAppliedFilters);
   };
 
@@ -103,6 +115,7 @@ const Landing = () => {
     const hairColors = new Set();
     let ageRange = [Infinity, 0];
     let heightRange = [Infinity, 0];
+    let weightRange = [Infinity, 0];
 
     originalListItems.forEach((item) => {
       hairColors.add(item.hair_color);
@@ -110,9 +123,11 @@ const Landing = () => {
 
       ageRange = minMaxRange(item.age, ageRange[0], ageRange[1]);
       heightRange = minMaxRange(item.height, heightRange[0], heightRange[1]);
+      weightRange = minMaxRange(item.weight, weightRange[0], weightRange[1]);
 
       currentFilters.current.ageFilter = ageRange;
       currentFilters.current.heightFilter = heightRange;
+      currentFilters.current.weightFilter = weightRange;
     });
 
     return {
@@ -120,6 +135,7 @@ const Landing = () => {
       hairColors: Array.from(hairColors),
       ageRange,
       heightRange,
+      weightRange,
     };
   }, [originalListItems]);
 
