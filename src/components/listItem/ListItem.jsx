@@ -73,16 +73,12 @@ const StyledDropdowBox = styled.div`
     }
   }
 
-  .professions {
-    li {
+  .list {
+    span, li {
       color: ${colors.grayWhite};
     }
   }
 
-  .friends {
-    span {
-      color: ${colors.grayWhite};
-    }
   }
 `;
 
@@ -94,7 +90,7 @@ const DropdowBox = ({ isExpanded, hair_color, professions, friends }) => (
           <h4>Hair Color:</h4>
           <span>{hair_color}</span>
         </div>
-        <div className="professions">
+        <div className="list">
           <h4>Professions: </h4>
           <ul>
             {professions.map((prof) => (
@@ -102,11 +98,17 @@ const DropdowBox = ({ isExpanded, hair_color, professions, friends }) => (
             ))}
           </ul>
         </div>
-        <div className="friends">
+        <div className="list">
           <h4>Friends: </h4>
-          {friends.map((friend) => (
-            <span key={friend}>{friend}</span>
-          ))}
+          {friends.length > 0 ? (
+            <ul>
+              {friends.map((friend) => (
+                <li key={friend}>{friend}</li>
+              ))}
+            </ul>
+          ) : (
+            <span>No known friends</span>
+          )}
         </div>
       </>
     </Collapse>
