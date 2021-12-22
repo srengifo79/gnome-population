@@ -53,10 +53,13 @@ const StyledListItem = styled.div`
 
 const StyledDropdowBox = styled.div`
   margin: 0 0.5rem;
-  padding: ${({ isExpanded }) => (isExpanded ? "0.5em" : "unset")};
   border-radius: 0.3em;
   color: ${colors.white};
   background: ${colors.blueGrayGradient};
+
+  .MuiCollapse-wrapper {
+    padding: 0.5em;
+  }
 
   .hair-color {
     h4 {
