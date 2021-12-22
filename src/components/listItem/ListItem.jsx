@@ -56,11 +56,7 @@ const StyledDropdowBox = styled.div`
   padding: ${({ isExpanded }) => (isExpanded ? "0.5em" : "unset")};
   border-radius: 0.3em;
   color: ${colors.white};
-  background: linear-gradient(
-    -60deg,
-    rgba(226, 244, 255, 0.3) 5%,
-    rgba(84, 107, 115, 0.3) 95%
-  );
+  background: ${colors.blueGrayGradient};
 
   .hair-color {
     h4 {
