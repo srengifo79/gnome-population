@@ -25,6 +25,7 @@ const Landing = () => {
     search: "",
     hairColors: [],
     ageFilter: [0, 0],
+    heightFilter: [0, 0],
   });
 
   const { isLoading, error, data } = useQuery("gnomesData", getGnomePopulation);
@@ -36,8 +37,21 @@ const Landing = () => {
     applyFilters();
   };
 
+  const minMaxRange = (curr, min, max) => {
+    let result = [min, max];
+
+    if (curr < min) {
+      result[0] = curr;
+    }
+    if (curr > max) {
+      result[1] = curr;
+    }
+
+    return result;
+  };
+
   const applyFilters = () => {
-    const { search, professions, hairColors, ageFilter } =
+    const { search, professions, hairColors, ageFilter, heightFilter } =
       currentFilters.current;
     let itemsAppliedFilters = originalListItems;
 
@@ -67,6 +81,11 @@ const Landing = () => {
       (item) => item.age >= ageFilter[0] && item.age <= ageFilter[1]
     );
 
+    //Height filter
+    itemsAppliedFilters = itemsAppliedFilters.filter(
+      (item) => item.height >= heightFilter[0] && item.height <= heightFilter[1]
+    );
+
     setListItems(itemsAppliedFilters);
   };
 
@@ -82,24 +101,25 @@ const Landing = () => {
   const filtersData = useMemo(() => {
     const professions = new Set();
     const hairColors = new Set();
-    const ageRange = [Infinity, 0];
+    let ageRange = [Infinity, 0];
+    let heightRange = [Infinity, 0];
 
     originalListItems.forEach((item) => {
       hairColors.add(item.hair_color);
       item.professions.forEach(professions.add, professions);
 
-      if (item.age < ageRange[0]) {
-        ageRange[0] = item.age;
-      }
-      if (item.age > ageRange[1]) {
-        ageRange[1] = item.age;
-      }
+      ageRange = minMaxRange(item.age, ageRange[0], ageRange[1]);
+      heightRange = minMaxRange(item.height, heightRange[0], heightRange[1]);
+
+      currentFilters.current.ageFilter = ageRange;
+      currentFilters.current.heightFilter = heightRange;
     });
 
     return {
       professions: Array.from(professions),
       hairColors: Array.from(hairColors),
       ageRange,
+      heightRange,
     };
   }, [originalListItems]);
 

@@ -41,15 +41,30 @@ const StyledDrawer = styled(Drawer)`
       .MuiCheckbox-root {
         color: ${colors.textBlue};
       }
+
+      .slider-container {
+        text-align: center;
+        
+        .MuiSlider-root {
+          width 92%
+        }
+      }
     }
   }
 `;
 
-const Filters = ({ professions, hairColors, ageRange, onFilter }) => {
+const Filters = ({
+  professions,
+  hairColors,
+  ageRange,
+  heightRange,
+  onFilter,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [professionFilter, setProfessionFilter] = useState([]);
   const [hairColorsFilter, setHairColorsFilter] = useState([]);
   const [ageFilter, setAgeFilter] = useState(ageRange);
+  const [heightFilter, setHeightFilter] = useState(heightRange);
 
   const checkboxChange = (newFilter, filterList) => {
     let filteredItems = filterList;
@@ -70,9 +85,9 @@ const Filters = ({ professions, hairColors, ageRange, onFilter }) => {
     onFilter(newFilter, filterName);
   };
 
-  const rangeFilterChange = (val) => {
-    setAgeFilter(val);
-    onFilter(val, "ageFilter");
+  const rangeFilterChange = (val, setState, filterName) => {
+    setState(val);
+    onFilter(val, filterName);
   };
 
   return (
@@ -89,14 +104,29 @@ const Filters = ({ professions, hairColors, ageRange, onFilter }) => {
           <h5>Age, Height, Weight</h5>
           <div className="filters-content">
             <span>Age</span>
-            <Slider
-              getAriaLabel={() => "Temperature range"}
-              value={ageFilter}
-              onChange={(e, val) => rangeFilterChange(val)}
-              valueLabelDisplay="auto"
-              min={ageRange[0]}
-              max={ageRange[1]}
-            />
+            <div className="slider-container">
+              <Slider
+                value={ageFilter}
+                onChange={(e, val) =>
+                  rangeFilterChange(val, setAgeFilter, "ageFilter")
+                }
+                valueLabelDisplay="auto"
+                min={ageRange[0]}
+                max={ageRange[1]}
+              />
+            </div>
+            <span>Height</span>
+            <div className="slider-container">
+              <Slider
+                value={heightFilter}
+                onChange={(e, val) =>
+                  rangeFilterChange(val, setHeightFilter, "heightFilter")
+                }
+                valueLabelDisplay="auto"
+                min={heightRange[0]}
+                max={heightRange[1]}
+              />
+            </div>
           </div>
         </div>
         <div className="filters-container">
