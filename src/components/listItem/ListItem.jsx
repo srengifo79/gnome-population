@@ -94,11 +94,15 @@ const DropdowBox = ({ isExpanded, hair_color, professions, friends }) => (
         </div>
         <div className="list">
           <h4>Professions: </h4>
-          <ul>
-            {professions.map((prof) => (
-              <li key={prof}>{prof}</li>
-            ))}
-          </ul>
+          {professions.length > 0 ? (
+            <ul>
+              {professions.map((prof) => (
+                <li key={prof}>{prof}</li>
+              ))}
+            </ul>
+          ) : (
+            <span>No known professions</span>
+          )}
         </div>
         <div className="list">
           <h4>Friends: </h4>
