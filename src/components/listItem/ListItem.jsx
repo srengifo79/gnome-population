@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Collapse from "@mui/material/Collapse";
+import { CircularProgress } from "@mui/material";
 
 import { colors } from "../../theme/colors";
 
@@ -16,6 +17,7 @@ const StyledListItem = styled.div`
     height: 100%;
     flex: 1;
     margin-right: 1em;
+    text-align: center;
 
     img {
       max-height: 100%;
@@ -115,26 +117,34 @@ const DropdowBox = ({ isExpanded, hair_color, professions, friends }) => (
   </StyledDropdowBox>
 );
 
-const Header = ({ id, age, name, height, weight, thumbnail, onClick }) => (
-  <StyledListItem onClick={onClick}>
-    {thumbnail && (
-      <div className="avatar">
-        <img src={thumbnail} alt="gnome avatar" />
+const Header = ({ id, age, name, height, weight, thumbnail, onClick }) => {
+  const [isLoadingImg, setIsLoadingImg] = useState(true);
+  return (
+    <StyledListItem onClick={onClick}>
+      {thumbnail && (
+        <div className="avatar">
+          {isLoadingImg && <CircularProgress />}
+          <img
+            src={thumbnail}
+            alt="gnome avatar"
+            onLoad={() => setIsLoadingImg(false)}
+          />
+        </div>
+      )}
+      <div className="info-container">
+        <div className="header">
+          <h3>{name}</h3>
+          <span>ID: {id}</span>
+        </div>
+        <div className="general-data">
+          <span>Age: {age}</span>
+          <span>Height: {height}</span>
+          <span>Weight: {weight}</span>
+        </div>
       </div>
-    )}
-    <div className="info-container">
-      <div className="header">
-        <h3>{name}</h3>
-        <span>ID: {id}</span>
-      </div>
-      <div className="general-data">
-        <span>Age: {age}</span>
-        <span>Height: {height}</span>
-        <span>Weight: {weight}</span>
-      </div>
-    </div>
-  </StyledListItem>
-);
+    </StyledListItem>
+  );
+};
 
 const ListItem = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
