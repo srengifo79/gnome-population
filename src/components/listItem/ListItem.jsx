@@ -14,6 +14,14 @@ const StyledListItem = styled.div`
   background-color: ${colors.darkBlue};
   color: ${colors.grayWhite};
 
+  ${breakpoints.large} {
+    height: 15rem;
+  }
+
+  ${breakpoints.xlarge} {
+    height: 30rem;
+  }
+
   .avatar {
     height: 100%;
     flex: 1;
@@ -27,7 +35,11 @@ const StyledListItem = styled.div`
   }
 
   .info-container {
-    flex: 2;
+    flex: 1;
+
+    ${breakpoints.tablet} {
+      flex: 2;
+    }
 
     span {
       display: block;
