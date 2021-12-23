@@ -5,6 +5,7 @@ import styled from "styled-components";
 import FilterListIcon from "@mui/icons-material/FilterList";
 
 import { colors } from "../../theme/colors";
+import CustomSlider from "../customSlider/CustomSlider";
 
 const StyledFilterIcon = styled.div`
   padding: 0.4rem 0.5rem;
@@ -46,15 +47,6 @@ const StyledContent = styled.div`
       .MuiCheckbox-root {
         color: ${colors.textBlue};
       }
-
-      .slider-container {
-        text-align: center;
-
-        .MuiSlider-root {
-          width 92%; 
-          color: ${colors.textBlue};
-        }
-      }
     }
   }
 `;
@@ -71,9 +63,6 @@ const Filters = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [professionFilter, setProfessionFilter] = useState([]);
   const [hairColorsFilter, setHairColorsFilter] = useState([]);
-  const [ageFilter, setAgeFilter] = useState(ageRange);
-  const [heightFilter, setHeightFilter] = useState(heightRange);
-  const [weightFilter, setWeightFilter] = useState(weightRange);
 
   const checkboxChange = (newFilter, filterList) => {
     let filteredItems = filterList;
@@ -94,16 +83,6 @@ const Filters = ({
     onFilter(newFilter, filterName);
   };
 
-  const rangeFilterChange = (val, setState, filterName) => {
-    setState(val);
-    onFilter(val, filterName);
-  };
-
-  //Duplicated code here that can be improved,
-  //had to pull it out from a shared component
-  //because of MUI Slider that has to be at the same level
-  //of the controlled state in order to slide
-  //Can be re aragned to avoid redundancy
   return (
     <>
       {expandable ? (
@@ -120,42 +99,21 @@ const Filters = ({
               <div className="filters-container">
                 <h5>Age, Height, Weight</h5>
                 <div className="filters-content">
-                  <span>Age</span>
-                  <div className="slider-container">
-                    <Slider
-                      value={ageFilter}
-                      onChange={(e, val) =>
-                        rangeFilterChange(val, setAgeFilter, "ageFilter")
-                      }
-                      valueLabelDisplay="auto"
-                      min={ageRange[0]}
-                      max={ageRange[1]}
-                    />
-                  </div>
-                  <span>Height</span>
-                  <div className="slider-container">
-                    <Slider
-                      value={heightFilter}
-                      onChange={(e, val) =>
-                        rangeFilterChange(val, setHeightFilter, "heightFilter")
-                      }
-                      valueLabelDisplay="auto"
-                      min={heightRange[0]}
-                      max={heightRange[1]}
-                    />
-                  </div>
-                  <span>Weight</span>
-                  <div className="slider-container">
-                    <Slider
-                      value={weightFilter}
-                      onChange={(e, val) =>
-                        rangeFilterChange(val, setWeightFilter, "weightFilter")
-                      }
-                      valueLabelDisplay="auto"
-                      min={weightRange[0]}
-                      max={weightRange[1]}
-                    />
-                  </div>
+                  <CustomSlider
+                    name="age"
+                    range={ageRange}
+                    onSlide={(val) => onFilter(val, "ageFilter")}
+                  />
+                  <CustomSlider
+                    name="Height"
+                    range={heightRange}
+                    onSlide={(val) => onFilter(val, "heightFilter")}
+                  />
+                  <CustomSlider
+                    name="Weight"
+                    range={weightRange}
+                    onSlide={(val) => onFilter(val, "weightFilter")}
+                  />
                 </div>
               </div>
               <div className="filters-container">
@@ -209,42 +167,21 @@ const Filters = ({
           <div className="filters-container">
             <h5>Age, Height, Weight</h5>
             <div className="filters-content">
-              <span>Age</span>
-              <div className="slider-container">
-                <Slider
-                  value={ageFilter}
-                  onChange={(e, val) =>
-                    rangeFilterChange(val, setAgeFilter, "ageFilter")
-                  }
-                  valueLabelDisplay="auto"
-                  min={ageRange[0]}
-                  max={ageRange[1]}
-                />
-              </div>
-              <span>Height</span>
-              <div className="slider-container">
-                <Slider
-                  value={heightFilter}
-                  onChange={(e, val) =>
-                    rangeFilterChange(val, setHeightFilter, "heightFilter")
-                  }
-                  valueLabelDisplay="auto"
-                  min={heightRange[0]}
-                  max={heightRange[1]}
-                />
-              </div>
-              <span>Weight</span>
-              <div className="slider-container">
-                <Slider
-                  value={weightFilter}
-                  onChange={(e, val) =>
-                    rangeFilterChange(val, setWeightFilter, "weightFilter")
-                  }
-                  valueLabelDisplay="auto"
-                  min={weightRange[0]}
-                  max={weightRange[1]}
-                />
-              </div>
+              <CustomSlider
+                name="age"
+                range={ageRange}
+                onSlide={(val) => onFilter(val, "ageFilter")}
+              />
+              <CustomSlider
+                name="Height"
+                range={heightRange}
+                onSlide={(val) => onFilter(val, "heightFilter")}
+              />
+              <CustomSlider
+                name="Weight"
+                range={weightRange}
+                onSlide={(val) => onFilter(val, "weightFilter")}
+              />
             </div>
           </div>
           <div className="filters-container">

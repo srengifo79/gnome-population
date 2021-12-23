@@ -13,7 +13,7 @@ Compared values have no visual difference."
 exports[`Initial snapshop 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dkPtRN eyKWNs"
+    class="sc-hKwDye ehCVXF"
   >
     <div
       class="filters-container"
@@ -24,251 +24,263 @@ exports[`Initial snapshop 1`] = `
       <div
         class="filters-content"
       >
-        <span>
-          Age
-        </span>
         <div
-          class="slider-container"
+          class="sc-bdvvtL ekJtLn"
         >
-          <span
-            class="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
+          <span>
+            age
+          </span>
+          <div
+            class="slider-container"
           >
             <span
-              class="MuiSlider-rail css-14pt78w-MuiSlider-rail"
-            />
-            <span
-              class="MuiSlider-track css-1gv0vcd-MuiSlider-track"
-              style="left: 0%; width: 100%;"
-            />
-            <span
-              class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
-              data-index="0"
-              style="left: 0%;"
+              class="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
             >
-              <input
-                aria-orientation="horizontal"
-                aria-valuemax="379"
-                aria-valuemin="30"
-                aria-valuenow="30"
+              <span
+                class="MuiSlider-rail css-14pt78w-MuiSlider-rail"
+              />
+              <span
+                class="MuiSlider-track css-1gv0vcd-MuiSlider-track"
+                style="left: 0%; width: 100%;"
+              />
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
                 data-index="0"
-                max="379"
-                min="30"
-                style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
-                type="range"
-                value="30"
-              />
-              <span
-                aria-hidden="true"
-                class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                style="left: 0%;"
               >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="379"
+                  aria-valuemin="30"
+                  aria-valuenow="30"
+                  data-index="0"
+                  max="379"
+                  min="30"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="30"
+                />
                 <span
-                  class="MuiSlider-valueLabelCircle"
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
                 >
                   <span
-                    class="MuiSlider-valueLabelLabel"
+                    class="MuiSlider-valueLabelCircle"
                   >
-                    30
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      30
+                    </span>
                   </span>
                 </span>
               </span>
-            </span>
-            <span
-              class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
-              data-index="1"
-              style="left: 100%;"
-            >
-              <input
-                aria-orientation="horizontal"
-                aria-valuemax="379"
-                aria-valuemin="30"
-                aria-valuenow="379"
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
                 data-index="1"
-                max="379"
-                min="30"
-                style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
-                type="range"
-                value="379"
-              />
-              <span
-                aria-hidden="true"
-                class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                style="left: 100%;"
               >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="379"
+                  aria-valuemin="30"
+                  aria-valuenow="379"
+                  data-index="1"
+                  max="379"
+                  min="30"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="379"
+                />
                 <span
-                  class="MuiSlider-valueLabelCircle"
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
                 >
                   <span
-                    class="MuiSlider-valueLabelLabel"
+                    class="MuiSlider-valueLabelCircle"
                   >
-                    379
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      379
+                    </span>
                   </span>
                 </span>
               </span>
             </span>
-          </span>
+          </div>
         </div>
-        <span>
-          Height
-        </span>
         <div
-          class="slider-container"
+          class="sc-bdvvtL ekJtLn"
         >
-          <span
-            class="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
+          <span>
+            Height
+          </span>
+          <div
+            class="slider-container"
           >
             <span
-              class="MuiSlider-rail css-14pt78w-MuiSlider-rail"
-            />
-            <span
-              class="MuiSlider-track css-1gv0vcd-MuiSlider-track"
-              style="left: 0%; width: 100%;"
-            />
-            <span
-              class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
-              data-index="0"
-              style="left: 0%;"
+              class="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
             >
-              <input
-                aria-orientation="horizontal"
-                aria-valuemax="129.37299"
-                aria-valuemin="91.41726"
-                aria-valuenow="91.41726"
+              <span
+                class="MuiSlider-rail css-14pt78w-MuiSlider-rail"
+              />
+              <span
+                class="MuiSlider-track css-1gv0vcd-MuiSlider-track"
+                style="left: 0%; width: 100%;"
+              />
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
                 data-index="0"
-                max="129.37299"
-                min="91.41726"
-                style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
-                type="range"
-                value="91.41726"
-              />
-              <span
-                aria-hidden="true"
-                class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                style="left: 0%;"
               >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="129.37299"
+                  aria-valuemin="91.41726"
+                  aria-valuenow="91.41726"
+                  data-index="0"
+                  max="129.37299"
+                  min="91.41726"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="91.41726"
+                />
                 <span
-                  class="MuiSlider-valueLabelCircle"
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
                 >
                   <span
-                    class="MuiSlider-valueLabelLabel"
+                    class="MuiSlider-valueLabelCircle"
                   >
-                    91.41726
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      91.41726
+                    </span>
                   </span>
                 </span>
               </span>
-            </span>
-            <span
-              class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
-              data-index="1"
-              style="left: 100%;"
-            >
-              <input
-                aria-orientation="horizontal"
-                aria-valuemax="129.37299"
-                aria-valuemin="91.41726"
-                aria-valuenow="129.37299"
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
                 data-index="1"
-                max="129.37299"
-                min="91.41726"
-                style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
-                type="range"
-                value="129.37299"
-              />
-              <span
-                aria-hidden="true"
-                class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                style="left: 100%;"
               >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="129.37299"
+                  aria-valuemin="91.41726"
+                  aria-valuenow="129.37299"
+                  data-index="1"
+                  max="129.37299"
+                  min="91.41726"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="129.37299"
+                />
                 <span
-                  class="MuiSlider-valueLabelCircle"
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
                 >
                   <span
-                    class="MuiSlider-valueLabelLabel"
+                    class="MuiSlider-valueLabelCircle"
                   >
-                    129.37299
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      129.37299
+                    </span>
                   </span>
                 </span>
               </span>
             </span>
-          </span>
+          </div>
         </div>
-        <span>
-          Weight
-        </span>
         <div
-          class="slider-container"
+          class="sc-bdvvtL ekJtLn"
         >
-          <span
-            class="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
+          <span>
+            Weight
+          </span>
+          <div
+            class="slider-container"
           >
             <span
-              class="MuiSlider-rail css-14pt78w-MuiSlider-rail"
-            />
-            <span
-              class="MuiSlider-track css-1gv0vcd-MuiSlider-track"
-              style="left: 0%; width: 100%;"
-            />
-            <span
-              class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
-              data-index="0"
-              style="left: 0%;"
+              class="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
             >
-              <input
-                aria-orientation="horizontal"
-                aria-valuemax="44.997665"
-                aria-valuemin="35.00214"
-                aria-valuenow="35.00214"
+              <span
+                class="MuiSlider-rail css-14pt78w-MuiSlider-rail"
+              />
+              <span
+                class="MuiSlider-track css-1gv0vcd-MuiSlider-track"
+                style="left: 0%; width: 100%;"
+              />
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
                 data-index="0"
-                max="44.997665"
-                min="35.00214"
-                style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
-                type="range"
-                value="35.00214"
-              />
-              <span
-                aria-hidden="true"
-                class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                style="left: 0%;"
               >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="44.997665"
+                  aria-valuemin="35.00214"
+                  aria-valuenow="35.00214"
+                  data-index="0"
+                  max="44.997665"
+                  min="35.00214"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="35.00214"
+                />
                 <span
-                  class="MuiSlider-valueLabelCircle"
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
                 >
                   <span
-                    class="MuiSlider-valueLabelLabel"
+                    class="MuiSlider-valueLabelCircle"
                   >
-                    35.00214
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      35.00214
+                    </span>
                   </span>
                 </span>
               </span>
-            </span>
-            <span
-              class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
-              data-index="1"
-              style="left: 100%;"
-            >
-              <input
-                aria-orientation="horizontal"
-                aria-valuemax="44.997665"
-                aria-valuemin="35.00214"
-                aria-valuenow="44.997665"
+              <span
+                class="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
                 data-index="1"
-                max="44.997665"
-                min="35.00214"
-                style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
-                type="range"
-                value="44.997665"
-              />
-              <span
-                aria-hidden="true"
-                class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+                style="left: 100%;"
               >
+                <input
+                  aria-orientation="horizontal"
+                  aria-valuemax="44.997665"
+                  aria-valuemin="35.00214"
+                  aria-valuenow="44.997665"
+                  data-index="1"
+                  max="44.997665"
+                  min="35.00214"
+                  style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                  type="range"
+                  value="44.997665"
+                />
                 <span
-                  class="MuiSlider-valueLabelCircle"
+                  aria-hidden="true"
+                  class="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
                 >
                   <span
-                    class="MuiSlider-valueLabelLabel"
+                    class="MuiSlider-valueLabelCircle"
                   >
-                    44.997665
+                    <span
+                      class="MuiSlider-valueLabelLabel"
+                    >
+                      44.997665
+                    </span>
                   </span>
                 </span>
               </span>
             </span>
-          </span>
+          </div>
         </div>
       </div>
     </div>
