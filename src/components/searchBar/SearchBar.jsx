@@ -38,6 +38,9 @@ const SearchBar = ({ onSearch, className }) => {
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         placeholder="Search by name"
+        onKeyDown={(e) => {
+          e.key === "Enter" && onSearch(e.target.value);
+        }}
       />
       <button onClick={() => onSearch(searchValue)}>Search</button>
     </StyledSearchBar>

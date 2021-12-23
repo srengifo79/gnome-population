@@ -62,7 +62,7 @@ const Landing = () => {
   const [selectedCityName, setSelectedCityName] = useState("");
   const [selectedCityItems, setSelectedCityItems] = useState([]);
   const [listItems, setListItems] = useState([]);
-  const [pagination, setPagination] = useState(10);
+  const [pagination, setPagination] = useState(5);
 
   const currentFilters = useRef({
     professions: [],
@@ -79,6 +79,7 @@ const Landing = () => {
 
   const handleFilterChange = (values, filter) => {
     currentFilters.current[filter] = values;
+    setPagination(5);
     applyFilters();
   };
 
@@ -150,7 +151,7 @@ const Landing = () => {
       Math.ceil(window.innerHeight + window.scrollY) >=
       document.documentElement.scrollHeight;
     if (bottom) {
-      setPagination((prev) => prev + 10);
+      setPagination((prev) => prev + 5);
     }
   };
 
