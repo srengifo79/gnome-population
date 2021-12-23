@@ -49,9 +49,10 @@ const StyledContent = styled.div`
 
       .slider-container {
         text-align: center;
-        
+
         .MuiSlider-root {
-          width 92%
+          width 92%; 
+          color: ${colors.textBlue};
         }
       }
     }
