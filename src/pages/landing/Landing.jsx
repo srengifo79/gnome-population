@@ -49,6 +49,7 @@ const StyledLanding = styled.div`
       .MuiSelect-select {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
+        min-width: 6em;
       }
     }
 

@@ -10,7 +10,7 @@ const StyledFilterIcon = styled.div`
   padding: 0.4rem 0.5rem;
   position: fixed;
   top: 3rem;
-  right: -1rem;
+  right: 0rem;
   border-radius: 50%;
   background-color: ${colors.whiteBlueBlur};
   color: ${colors.paleBLue};
