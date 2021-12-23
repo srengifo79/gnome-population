@@ -26,7 +26,7 @@ const StyledDrawer = styled(Drawer)`
   }
 `;
 
-const StyledContent = styled.div`
+const StyledFiltersBody = styled.div`
   padding: 0.2rem;
   background-color: ${colors.backgroundBlue};
 
@@ -48,15 +48,56 @@ const StyledContent = styled.div`
   }
 `;
 
-const Filters = ({
-  professions,
-  hairColors,
+const FiltersBody = ({
   ageRange,
   heightRange,
   weightRange,
+  professions,
+  hairColors,
   onFilter,
-  expandable,
 }) => {
+  return (
+    <StyledFiltersBody>
+      <div className="filters-container">
+        <h5>Age, Height, Weight</h5>
+        <div className="filters-content">
+          <CustomSlider
+            name="age"
+            range={ageRange}
+            onSlide={(val) => onFilter(val, "ageFilter")}
+          />
+          <CustomSlider
+            name="Height"
+            range={heightRange}
+            onSlide={(val) => onFilter(val, "heightFilter")}
+          />
+          <CustomSlider
+            name="Weight"
+            range={weightRange}
+            onSlide={(val) => onFilter(val, "weightFilter")}
+          />
+        </div>
+      </div>
+      <div className="filters-container">
+        <CustomCheckboxFilter
+          name="Professions"
+          filterList={professions}
+          onCheck={(val) => onFilter(val, "professions")}
+        />
+      </div>
+      <div className="filters-container">
+        <CustomCheckboxFilter
+          name="Hair Colors"
+          filterList={hairColors}
+          onCheck={(val) => onFilter(val, "hairColors")}
+        />
+      </div>
+    </StyledFiltersBody>
+  );
+};
+
+const Filters = (props) => {
+  const { expandable } = props;
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -71,81 +112,11 @@ const Filters = ({
             open={isExpanded}
             onClose={() => setIsExpanded((prev) => !prev)}
           >
-            <StyledContent>
-              <div className="filters-container">
-                <h5>Age, Height, Weight</h5>
-                <div className="filters-content">
-                  <CustomSlider
-                    name="age"
-                    range={ageRange}
-                    onSlide={(val) => onFilter(val, "ageFilter")}
-                  />
-                  <CustomSlider
-                    name="Height"
-                    range={heightRange}
-                    onSlide={(val) => onFilter(val, "heightFilter")}
-                  />
-                  <CustomSlider
-                    name="Weight"
-                    range={weightRange}
-                    onSlide={(val) => onFilter(val, "weightFilter")}
-                  />
-                </div>
-              </div>
-              <div className="filters-container">
-                <CustomCheckboxFilter
-                  name="Professions"
-                  filterList={professions}
-                  onCheck={(val) => onFilter(val, "professions")}
-                />
-              </div>
-              <div className="filters-container">
-                <CustomCheckboxFilter
-                  name="Hair Colors"
-                  filterList={hairColors}
-                  onCheck={(val) => onFilter(val, "hairColors")}
-                />
-              </div>
-            </StyledContent>
+            <FiltersBody {...props} />
           </StyledDrawer>
         </>
       ) : (
-        <StyledContent>
-          <div className="filters-container">
-            <h5>Age, Height, Weight</h5>
-            <div className="filters-content">
-              <CustomSlider
-                name="age"
-                range={ageRange}
-                onSlide={(val) => onFilter(val, "ageFilter")}
-              />
-              <CustomSlider
-                name="Height"
-                range={heightRange}
-                onSlide={(val) => onFilter(val, "heightFilter")}
-              />
-              <CustomSlider
-                name="Weight"
-                range={weightRange}
-                onSlide={(val) => onFilter(val, "weightFilter")}
-              />
-            </div>
-          </div>
-          <div className="filters-container">
-            <CustomCheckboxFilter
-              name="Professions"
-              filterList={professions}
-              onCheck={(val) => onFilter(val, "professions")}
-            />
-          </div>
-          <div className="filters-container">
-            <CustomCheckboxFilter
-              name="Hair Colors"
-              filterList={hairColors}
-              onCheck={(val) => onFilter(val, "hairColors")}
-            />
-          </div>
-        </StyledContent>
+        <FiltersBody {...props} />
       )}
     </>
   );
