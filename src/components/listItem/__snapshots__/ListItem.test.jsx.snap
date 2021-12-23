@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expanded snapshot 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -60,12 +60,12 @@
+    </div>
+    <div
+      class=\\"sc-gsDKAQ iarUdB\\"
+    >
+      <div
+-       class=\\"MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root\\"
+-       style=\\"min-height: 0px;\\"
++       class=\\"MuiCollapse-root MuiCollapse-vertical css-1fkrdiv-MuiCollapse-root\\"
++       style=\\"min-height: 0px; height: 0px; transition-duration: 300ms;\\"
+      >
+        <div
+          class=\\"MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper\\"
+        >
+          <div"
+`;
+
+exports[`Initial snapshop 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdvvtL emYqlb"
+    data-testid="listItemContainer"
+  >
+    <div
+      class="avatar"
+    >
+      <span
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </span>
+      <img
+        alt="gnome avatar"
+        src="http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg"
+      />
+    </div>
+    <div
+      class="info-container"
+    >
+      <div
+        class="header"
+      >
+        <h3>
+          Tobus Quickwhistle
+        </h3>
+        <span>
+          ID: 0
+        </span>
+      </div>
+      <div
+        class="general-data"
+      >
+        <span>
+          Age: 306
+        </span>
+        <span>
+          Height: 107.75835
+        </span>
+        <span>
+          Weight: 39.065952
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

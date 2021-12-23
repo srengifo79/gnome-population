@@ -133,7 +133,7 @@ const DropdowBox = ({ isExpanded, hair_color, professions, friends }) => (
 const Header = ({ id, age, name, height, weight, thumbnail, onClick }) => {
   const [isLoadingImg, setIsLoadingImg] = useState(true);
   return (
-    <StyledListItem onClick={onClick}>
+    <StyledListItem onClick={onClick} data-testid="listItemContainer">
       {thumbnail && (
         <div className="avatar">
           {isLoadingImg && <CircularProgress />}
