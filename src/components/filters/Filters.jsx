@@ -62,7 +62,7 @@ const FiltersBody = ({
         <h5>Age, Height, Weight</h5>
         <div className="filters-content">
           <CustomSlider
-            name="age"
+            name="Age"
             range={ageRange}
             onSlide={(val) => onFilter(val, "ageFilter")}
           />
