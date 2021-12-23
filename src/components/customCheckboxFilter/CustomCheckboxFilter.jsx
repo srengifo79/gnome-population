@@ -36,7 +36,7 @@ const CustomCheckboxFilter = ({ name, filterList, onCheck }) => {
           <div key={prof}>
             <Checkbox
               name={prof}
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
               onChange={(e) => {
                 handleCheck(e.target.checked, e.target.name);
               }}

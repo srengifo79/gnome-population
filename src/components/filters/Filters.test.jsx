@@ -16,22 +16,3 @@ it("Initial snapshop", () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
-
-it("Check and uncheck filter", () => {
-  const mockOnFilter = jest.fn();
-  const { asFragment } = render(
-    <Filters {...filterMock} onFilter={mockOnFilter} />
-  );
-  const initialRender = asFragment();
-
-  const checkbox = screen.getAllByTestId("profCheckbox")[0].childNodes[0];
-  fireEvent.click(checkbox);
-
-  expect(mockOnFilter).toBeCalledWith([" Tinker"], "professions");
-  expect(initialRender).toMatchDiffSnapshot(asFragment());
-
-  fireEvent.click(checkbox);
-
-  expect(mockOnFilter).toBeCalledWith([], "professions");
-  expect(initialRender).toMatchDiffSnapshot(asFragment());
-});

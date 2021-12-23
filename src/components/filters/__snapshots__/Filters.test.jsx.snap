@@ -1,49 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check and uncheck filter 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -283,11 +283,11 @@
-          <div
-            class=\\"filters-content\\"
-          >
-            <div>
-              <span
--               class=\\"MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\\"
-+               class=\\"MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root Mui-checked css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\\"
-                data-testid=\\"profCheckbox\\"
-              >
-                <input
-                  class=\\"PrivateSwitchBase-input css-1m9pwf3\\"
-                  data-indeterminate=\\"false\\"
-@@ -295,16 +295,16 @@
-                  type=\\"checkbox\\"
-                />
-                <svg
-                  aria-hidden=\\"true\\"
-                  class=\\"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root\\"
--                 data-testid=\\"CheckBoxOutlineBlankIcon\\"
-+                 data-testid=\\"CheckBoxIcon\\"
-                  focusable=\\"false\\"
-                  viewBox=\\"0 0 24 24\\"
-                >
-                  <path
--                   d=\\"M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z\\"
-+                   d=\\"M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\\"
-                  />
-                </svg>
-                <span
-                  class=\\"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root\\"
-                />"
-`;
-
-exports[`Check and uncheck filter 2`] = `
-"Snapshot Diff:
-Compared values have no visual difference."
-`;
-
 exports[`Initial snapshop 1`] = `
 <DocumentFragment>
   <div
@@ -333,7 +289,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -363,7 +319,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -393,7 +349,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -423,7 +379,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -453,7 +409,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -483,7 +439,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -513,7 +469,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -543,7 +499,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -573,7 +529,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -603,7 +559,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -633,7 +589,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -663,7 +619,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -693,7 +649,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -723,7 +679,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -753,7 +709,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -783,7 +739,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -813,7 +769,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -843,7 +799,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -873,7 +829,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -903,7 +859,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -933,7 +889,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -963,7 +919,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -993,7 +949,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1023,7 +979,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1068,7 +1024,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1098,7 +1054,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1128,7 +1084,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1158,7 +1114,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1188,7 +1144,7 @@ exports[`Initial snapshop 1`] = `
           <div>
             <span
               class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
-              data-testid="profCheckbox"
+              data-testid="checkboxes"
             >
               <input
                 class="PrivateSwitchBase-input css-1m9pwf3"
