@@ -3,7 +3,7 @@ import SearchBar from "../../components/searchBar/SearchBar";
 import { useQuery } from "react-query";
 import CircularProgress from "@mui/material/CircularProgress";
 import styled from "styled-components";
-import { MenuItem, Select } from "@mui/material";
+import { Grid, MenuItem, Select } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { getGnomePopulation } from "../../api/gnomePopulation";
@@ -244,9 +244,13 @@ const Landing = () => {
             <CircularProgress />
           </div>
         )}
-        {listItems.slice(0, pagination).map((item) => (
-          <ListItem {...item} key={item.id} collapsable={true} />
-        ))}
+        <Grid container>
+          {listItems.slice(0, pagination).map((item) => (
+            <Grid item key={item.id} xs={12} md={6} xl={4}>
+              <ListItem {...item} collapsable={true} />
+            </Grid>
+          ))}
+        </Grid>
       </section>
       <Filters
         {...filtersData}

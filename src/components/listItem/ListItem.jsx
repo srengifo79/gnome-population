@@ -20,14 +20,6 @@ const StyledListItem = styled.div`
     margin-right: 1em;
     text-align: center;
 
-    ${breakpoints.xlarge} {
-      max-width: 19rem;
-    }
-
-    ${breakpoints.xxlarge} {
-      max-width: 25rem;
-    }
-
     img {
       max-height: 100%;
       width: 100%;
