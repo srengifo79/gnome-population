@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Initial snapshop 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdvvtL krySSK"
+  >
+    <input
+      placeholder="Search by name"
+      value=""
+    />
+    <button>
+      Search
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input and search click 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -2,11 +2,11 @@
+    <div
+      class=\\"sc-bdvvtL krySSK\\"
+    >
+      <input
+        placeholder=\\"Search by name\\"
+-       value=\\"\\"
++       value=\\"Testing...\\"
+      />
+      <button>
+        Search
+      </button>
+    </div>"
+`;
