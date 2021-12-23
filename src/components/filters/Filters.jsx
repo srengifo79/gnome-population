@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Checkbox, Drawer, Slider } from "@mui/material";
+import { Drawer } from "@mui/material";
 import styled from "styled-components";
 
 import FilterListIcon from "@mui/icons-material/FilterList";
 
 import { colors } from "../../theme/colors";
 import CustomSlider from "../customSlider/CustomSlider";
+import CustomCheckboxFilter from "../customCheckboxFilter/CustomCheckboxFilter";
 
 const StyledFilterIcon = styled.div`
   padding: 0.4rem 0.5rem;
@@ -43,10 +44,6 @@ const StyledContent = styled.div`
       padding: 0.5rem;
       color: ${colors.white};
       border: 1px solid ${colors.grayDark};
-
-      .MuiCheckbox-root {
-        color: ${colors.textBlue};
-      }
     }
   }
 `;
@@ -61,27 +58,6 @@ const Filters = ({
   expandable,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [professionFilter, setProfessionFilter] = useState([]);
-  const [hairColorsFilter, setHairColorsFilter] = useState([]);
-
-  const checkboxChange = (newFilter, filterList) => {
-    let filteredItems = filterList;
-    if (filterList.includes(newFilter)) {
-      filteredItems = filterList.filter(
-        (elem, index) => index !== filterList.indexOf(newFilter)
-      );
-    } else {
-      filteredItems.push(newFilter);
-    }
-
-    return filteredItems;
-  };
-
-  const checkboxFilterChange = (values, setState, filterName, filterList) => {
-    const newFilter = checkboxChange(values, filterList);
-    setState(newFilter);
-    onFilter(newFilter, filterName);
-  };
 
   return (
     <>
@@ -117,47 +93,18 @@ const Filters = ({
                 </div>
               </div>
               <div className="filters-container">
-                <h5>Professions</h5>
-                <div className="filters-content">
-                  {professions.sort().map((prof) => (
-                    <div key={prof}>
-                      <Checkbox
-                        data-testid="profCheckbox"
-                        checked={professionFilter.includes(prof)}
-                        onChange={() =>
-                          checkboxFilterChange(
-                            prof,
-                            setProfessionFilter,
-                            "professions",
-                            professionFilter
-                          )
-                        }
-                      />
-                      <span>{prof}</span>
-                    </div>
-                  ))}
-                </div>
+                <CustomCheckboxFilter
+                  name="Professions"
+                  filterList={professions}
+                  onCheck={(val) => onFilter(val, "professions")}
+                />
               </div>
               <div className="filters-container">
-                <h5>Hair Colors</h5>
-                <div className="filters-content">
-                  {hairColors.sort().map((color) => (
-                    <div key={color}>
-                      <Checkbox
-                        checked={hairColorsFilter.includes(color)}
-                        onChange={() =>
-                          checkboxFilterChange(
-                            color,
-                            setHairColorsFilter,
-                            "hairColors",
-                            hairColorsFilter
-                          )
-                        }
-                      />
-                      <span>{color}</span>
-                    </div>
-                  ))}
-                </div>
+                <CustomCheckboxFilter
+                  name="Hair Colors"
+                  filterList={hairColors}
+                  onCheck={(val) => onFilter(val, "hairColors")}
+                />
               </div>
             </StyledContent>
           </StyledDrawer>
@@ -185,47 +132,18 @@ const Filters = ({
             </div>
           </div>
           <div className="filters-container">
-            <h5>Professions</h5>
-            <div className="filters-content">
-              {professions.sort().map((prof) => (
-                <div key={prof}>
-                  <Checkbox
-                    data-testid="profCheckbox"
-                    checked={professionFilter.includes(prof)}
-                    onChange={() =>
-                      checkboxFilterChange(
-                        prof,
-                        setProfessionFilter,
-                        "professions",
-                        professionFilter
-                      )
-                    }
-                  />
-                  <span>{prof}</span>
-                </div>
-              ))}
-            </div>
+            <CustomCheckboxFilter
+              name="Professions"
+              filterList={professions}
+              onCheck={(val) => onFilter(val, "professions")}
+            />
           </div>
           <div className="filters-container">
-            <h5>Hair Colors</h5>
-            <div className="filters-content">
-              {hairColors.sort().map((color) => (
-                <div key={color}>
-                  <Checkbox
-                    checked={hairColorsFilter.includes(color)}
-                    onChange={() =>
-                      checkboxFilterChange(
-                        color,
-                        setHairColorsFilter,
-                        "hairColors",
-                        hairColorsFilter
-                      )
-                    }
-                  />
-                  <span>{color}</span>
-                </div>
-              ))}
-            </div>
+            <CustomCheckboxFilter
+              name="Hair Colors"
+              filterList={hairColors}
+              onCheck={(val) => onFilter(val, "hairColors")}
+            />
           </div>
         </StyledContent>
       )}
