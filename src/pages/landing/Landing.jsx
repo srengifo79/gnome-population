@@ -63,7 +63,7 @@ const Landing = () => {
   const [selectedCityName, setSelectedCityName] = useState("");
   const [selectedCityItems, setSelectedCityItems] = useState([]);
   const [listItems, setListItems] = useState([]);
-  const [pagination, setPagination] = useState(5);
+  const [pagination, setPagination] = useState(10);
 
   const currentFilters = useRef({
     professions: [],
@@ -80,7 +80,7 @@ const Landing = () => {
 
   const handleFilterChange = (values, filter) => {
     currentFilters.current[filter] = values;
-    setPagination(5);
+    setPagination(10);
     applyFilters();
   };
 
