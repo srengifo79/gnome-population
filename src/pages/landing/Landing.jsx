@@ -28,6 +28,11 @@ const StyledLanding = styled.div`
       outline: none;
       border: 1px solid ${colors.black};
       border-radius: 0.2em;
+
+      .MuiSelect-select {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      }
     }
 
     .search-bar {
