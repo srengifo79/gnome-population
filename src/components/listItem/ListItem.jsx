@@ -145,6 +145,7 @@ const Header = ({ id, age, name, height, weight, thumbnail, onClick }) => {
             src={thumbnail}
             alt="gnome avatar"
             onLoad={() => setIsLoadingImg(false)}
+            onError={() => setIsLoadingImg(false)}
           />
         </div>
       )}
