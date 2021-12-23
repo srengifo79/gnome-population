@@ -148,6 +148,7 @@ const Filters = ({
           {professions.sort().map((prof) => (
             <div key={prof}>
               <Checkbox
+                data-testid="profCheckbox"
                 checked={professionFilter.includes(prof)}
                 onChange={() =>
                   checkboxFilterChange(
