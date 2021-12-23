@@ -16,6 +16,18 @@ const StyledLanding = styled.div`
   display: flex;
   flex-direction: row;
 
+  ${breakpoints.xlarge} {
+    font-size: 1.3rem;
+  }
+
+  ${breakpoints.xxlarge} {
+    font-size: 1.5rem;
+  }
+
+  section {
+    flex: 1;
+  }
+
   .loading-container {
     display: flex;
     justify-content: center;

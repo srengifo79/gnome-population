@@ -4,6 +4,7 @@ import Collapse from "@mui/material/Collapse";
 import { CircularProgress } from "@mui/material";
 
 import { colors } from "../../theme/colors";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledListItem = styled.div`
   display: flex;
@@ -18,6 +19,14 @@ const StyledListItem = styled.div`
     flex: 1;
     margin-right: 1em;
     text-align: center;
+
+    ${breakpoints.xlarge} {
+      max-width: 19rem;
+    }
+
+    ${breakpoints.xxlarge} {
+      max-width: 25rem;
+    }
 
     img {
       max-height: 100%;
