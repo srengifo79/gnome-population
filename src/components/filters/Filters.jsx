@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Checkbox, Drawer, Slider } from "@mui/material";
 import styled from "styled-components";
 
@@ -22,6 +22,11 @@ const StyledDrawer = styled(Drawer)`
     padding: 0.2rem;
     background-color: ${colors.backgroundBlue};
   }
+`;
+
+const StyledContent = styled.div`
+  padding: 0.2rem;
+  background-color: ${colors.backgroundBlue};
 
   .filters-container {
     min-width: 15rem;
@@ -60,6 +65,7 @@ const Filters = ({
   heightRange,
   weightRange,
   onFilter,
+  expandable,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [professionFilter, setProfessionFilter] = useState([]);
@@ -92,100 +98,112 @@ const Filters = ({
     onFilter(val, filterName);
   };
 
+  const Content = () => (
+    <StyledContent>
+      <div className="filters-container">
+        <h5>Age, Height, Weight</h5>
+        <div className="filters-content">
+          <span>Age</span>
+          <div className="slider-container">
+            <Slider
+              value={ageFilter}
+              onChange={(e, val) =>
+                rangeFilterChange(val, setAgeFilter, "ageFilter")
+              }
+              valueLabelDisplay="auto"
+              min={ageRange[0]}
+              max={ageRange[1]}
+            />
+          </div>
+          <span>Height</span>
+          <div className="slider-container">
+            <Slider
+              value={heightFilter}
+              onChange={(e, val) =>
+                rangeFilterChange(val, setHeightFilter, "heightFilter")
+              }
+              valueLabelDisplay="auto"
+              min={heightRange[0]}
+              max={heightRange[1]}
+            />
+          </div>
+          <span>Weight</span>
+          <div className="slider-container">
+            <Slider
+              value={weightFilter}
+              onChange={(e, val) =>
+                rangeFilterChange(val, setWeightFilter, "weightFilter")
+              }
+              valueLabelDisplay="auto"
+              min={weightRange[0]}
+              max={weightRange[1]}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="filters-container">
+        <h5>Professions</h5>
+        <div className="filters-content">
+          {professions.sort().map((prof) => (
+            <div key={prof}>
+              <Checkbox
+                checked={professionFilter.includes(prof)}
+                onChange={() =>
+                  checkboxFilterChange(
+                    prof,
+                    setProfessionFilter,
+                    "professions",
+                    professionFilter
+                  )
+                }
+              />
+              <span>{prof}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="filters-container">
+        <h5>Hair Colors</h5>
+        <div className="filters-content">
+          {hairColors.sort().map((color) => (
+            <div key={color}>
+              <Checkbox
+                checked={hairColorsFilter.includes(color)}
+                onChange={() =>
+                  checkboxFilterChange(
+                    color,
+                    setHairColorsFilter,
+                    "hairColors",
+                    hairColorsFilter
+                  )
+                }
+              />
+              <span>{color}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </StyledContent>
+  );
+
   return (
     <>
-      <StyledFilterIcon onClick={() => setIsExpanded((prev) => !prev)}>
-        <FilterListIcon />
-      </StyledFilterIcon>
-      <StyledDrawer
-        anchor="right"
-        open={isExpanded}
-        onClose={() => setIsExpanded((prev) => !prev)}
-      >
-        <div className="filters-container">
-          <h5>Age, Height, Weight</h5>
-          <div className="filters-content">
-            <span>Age</span>
-            <div className="slider-container">
-              <Slider
-                value={ageFilter}
-                onChange={(e, val) =>
-                  rangeFilterChange(val, setAgeFilter, "ageFilter")
-                }
-                valueLabelDisplay="auto"
-                min={ageRange[0]}
-                max={ageRange[1]}
-              />
-            </div>
-            <span>Height</span>
-            <div className="slider-container">
-              <Slider
-                value={heightFilter}
-                onChange={(e, val) =>
-                  rangeFilterChange(val, setHeightFilter, "heightFilter")
-                }
-                valueLabelDisplay="auto"
-                min={heightRange[0]}
-                max={heightRange[1]}
-              />
-            </div>
-            <span>Weight</span>
-            <div className="slider-container">
-              <Slider
-                value={weightFilter}
-                onChange={(e, val) =>
-                  rangeFilterChange(val, setWeightFilter, "weightFilter")
-                }
-                valueLabelDisplay="auto"
-                min={weightRange[0]}
-                max={weightRange[1]}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="filters-container">
-          <h5>Professions</h5>
-          <div className="filters-content">
-            {professions.sort().map((prof) => (
-              <div key={prof}>
-                <Checkbox
-                  checked={professionFilter.includes(prof)}
-                  onChange={() =>
-                    checkboxFilterChange(
-                      prof,
-                      setProfessionFilter,
-                      "professions",
-                      professionFilter
-                    )
-                  }
-                />
-                <span>{prof}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="filters-container">
-          <h5>Hair Colors</h5>
-          <div className="filters-content">
-            {hairColors.sort().map((color) => (
-              <div key={color}>
-                <Checkbox
-                  checked={hairColorsFilter.includes(color)}
-                  onChange={() =>
-                    checkboxFilterChange(
-                      color,
-                      setHairColorsFilter,
-                      "hairColors",
-                      hairColorsFilter
-                    )
-                  }
-                />
-                <span>{color}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </StyledDrawer>
+      {expandable ? (
+        <>
+          <StyledFilterIcon onClick={() => setIsExpanded((prev) => !prev)}>
+            <FilterListIcon />
+          </StyledFilterIcon>
+          <StyledDrawer
+            anchor="right"
+            open={isExpanded}
+            onClose={() => setIsExpanded((prev) => !prev)}
+          >
+            <Content />
+          </StyledDrawer>
+        </>
+      ) : (
+        <Content />
+      )}
     </>
   );
 };

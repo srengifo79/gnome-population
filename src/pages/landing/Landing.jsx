@@ -3,14 +3,19 @@ import SearchBar from "../../components/searchBar/SearchBar";
 import { useQuery } from "react-query";
 import CircularProgress from "@mui/material/CircularProgress";
 import styled from "styled-components";
+import { MenuItem, Select } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { getGnomePopulation } from "../../api/gnomePopulation";
 import ListItem from "../../components/listItem/ListItem";
 import Filters from "../../components/filters/Filters";
 import { colors } from "../../theme/colors";
-import { MenuItem, Select } from "@mui/material";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledLanding = styled.div`
+  display: flex;
+  flex-direction: row;
+
   .loading-container {
     display: flex;
     justify-content: center;
@@ -192,40 +197,48 @@ const Landing = () => {
     };
   }, []);
 
+  const isMobile = useMediaQuery(breakpoints.tablet);
+
   return (
     <StyledLanding>
-      <header>
-        <Select
-          name="city"
-          id="city"
-          className="city-select"
-          value={selectedCityName}
-          onChange={(e) => {
-            handleCitySelect(e.target.value);
-          }}
-        >
-          {!error &&
-            data &&
-            dataKeys.map((key) => (
-              <MenuItem key={key} value={key}>
-                {key}
-              </MenuItem>
-            ))}
-        </Select>
-        <SearchBar
-          onSearch={(val) => handleFilterChange(val, "search")}
-          className="search-bar"
-        />
-      </header>
-      {isLoading && (
-        <div className="loading-container">
-          <CircularProgress />
-        </div>
-      )}
-      {listItems.slice(0, pagination).map((item) => (
-        <ListItem {...item} key={item.id} collapsable={true} />
-      ))}
-      <Filters {...filtersData} onFilter={handleFilterChange} />
+      <section>
+        <header>
+          <Select
+            name="city"
+            id="city"
+            className="city-select"
+            value={selectedCityName}
+            onChange={(e) => {
+              handleCitySelect(e.target.value);
+            }}
+          >
+            {!error &&
+              data &&
+              dataKeys.map((key) => (
+                <MenuItem key={key} value={key}>
+                  {key}
+                </MenuItem>
+              ))}
+          </Select>
+          <SearchBar
+            onSearch={(val) => handleFilterChange(val, "search")}
+            className="search-bar"
+          />
+        </header>
+        {isLoading && (
+          <div className="loading-container">
+            <CircularProgress />
+          </div>
+        )}
+        {listItems.slice(0, pagination).map((item) => (
+          <ListItem {...item} key={item.id} collapsable={true} />
+        ))}
+      </section>
+      <Filters
+        {...filtersData}
+        onFilter={handleFilterChange}
+        expandable={isMobile}
+      />
     </StyledLanding>
   );
 };
